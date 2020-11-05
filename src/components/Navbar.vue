@@ -10,14 +10,20 @@
             </div>
             <ul class='nav-menu'>
                 <li class="nav-item">
-                    <router-link class="nav-links" to:="/princing"> Pricing</router-link>
+                    <router-link class="nav-links" to:="/princing">
+                        <p>Pricing</p>
+                    </router-link>
 
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to:="/about"> About</router-link>
+                    <router-link class="nav-link" to:="/about">
+                        <p>About</p>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-links" to:="/contact"> Contact</router-link>
+                    <router-link class="nav-links" to:="/contact">
+                        <p>Contact</p>
+                    </router-link>
                 </li>
                 <button class='pink-btn'> Schedule a Demo</button>
             </ul>
@@ -39,183 +45,165 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-$dark-red: rgb(186, 66, 112);
-$link-water-white: rgb(251, 252, 254);
-$san-juan-blue: rgb(54, 83, 107);
-$mirage-blue: rgb(27, 38, 47);
-$charm-pink: rgb(218, 109, 151);
-$light-san-juan-blue: rgb(108, 130, 148);
-//---------------font sizes-----------
-$h1-big: 72px;
-$h1-small: 56px;
-$h2-size: 48px;
-$h3-big: 32px;
-$h3-small: 20px;
-$h4-size: 25px;
-//--------------font families-----------
-$DM-serif: 'DM Serif Display',
-serif;
-$public-sans: 'Public Sans',
-sans-serif;
-//--------------font weights-------------
-$regular: 400;
-$light: 300;
-
-//-------------------Navbar Component --------------
+<style scoped>
 .navbar {
     height: 80px;
     display: center;
     justify-content: center;
     align-items: center;
     font-size: 15px;
+}
 
-    .navbar-cont {
-        display: flex;
-        justify-content: start;
-        height: 80px;
-        max-width: 1700px;
+.navbar .navbar-cont {
+    display: flex;
+    justify-content: start;
+    height: 80px;
+    max-width: 1700px;
+}
 
-        .navbar-logo {
-            text-align: start !important;
-            margin-left: 10vw;
-            margin-top: 20px;
-            cursor: pointer;
-            align-items: center;
+.navbar .navbar-cont .navbar-logo {
+    text-align: start !important;
+    margin-left: 10vw;
+    margin-top: 20px;
+    cursor: pointer;
+    align-items: center;
+}
 
-            img {
-                align-self: start !important;
-                height: 40px;
-            }
+.navbar .navbar-cont .navbar-logo img {
+    align-self: start !important;
+    height: 40px;
+}
 
-            @media screen and (max-width: 756px) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: translate(10%, 0);
-            }
-        }
-
-        .menu-icon {
-            display: none;
-
-            @media screen and (max-width: 756px) {
-                display: block;
-                position: absolute;
-                top: 30px;
-                right: 40px;
-                font-size: 1.8rem;
-                z-index: 2;
-                cursor: pointer;
-            }
-
-            .fa-bars,
-            .fa-times {
-                color: $mirage-blue;
-            }
-
-            .fa-times {
-                color: $link-water-white;
-            }
-        }
-
-        .nav-menu {
-            display: grid;
-            grid-template-columns: repeat(3, auto);
-            grid-gap: 35px;
-            list-style: none;
-            text-align: center;
-            justify-content: start;
-            margin-left: 80px;
-            align-items: center;
-
-            @media screen and (max-width: 756px) {
-                display: flex;
-                flex-direction: column;
-                padding-top: 7%;
-                width: 80%;
-                height: 100%;
-                position: absolute;
-                left: 100%;
-                opacity: 0;
-                transition: all 0.5s ease;
-
-                &.active {
-                    background-color: $mirage-blue;
-                    left: 2%;
-                    opacity: 1;
-                    transition: all 0.5s ease;
-                    z-index: 1;
-
-                    .nav-links {
-                        font-size: 22px;
-                        color: $light-san-juan-blue;
-
-                        &:hover {
-                            cursor: pointer;
-                            color: $link-water-white;
-                        }
-                    }
-
-                    li {
-                        &:first-child {
-                            margin-top: 70px;
-                        }
-                    }
-                }
-            }
-
-            .nav-links {
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                color: $light-san-juan-blue;
-                font-family: $public-sans;
-
-                &:hover {
-                    transition: all 0.2s ease-out;
-                    color: $mirage-blue;
-                }
-
-                &-mobile {
-                    display: none;
-                }
-
-                .nav-item {
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-            }
-
-            .pink-btn {
-                @media screen and (min-width: 756px) {
-                    position: absolute;
-                    right: 80px;
-                    top: 20px;
-                }
-
-                height: 50px;
-                width: 150px;
-                border-radius: 25px;
-
-                @media screen and (max-width:756px) {
-                    width: 80%;
-                    font-size: 16px;
-                }
-
-                cursor: pointer;
-                border: 1px solid $dark-red;
-                background-color: $dark-red;
-                color: $link-water-white;
-
-                &:hover {
-                    transition: all 0.2s ease-out;
-                    border-color: $charm-pink;
-                    background-color: $charm-pink;
-                }
-            }
-        }
+@media screen and (max-width: 756px) {
+    .navbar .navbar-cont .navbar-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(10%, 0);
     }
+}
+
+.navbar .navbar-cont .menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 756px) {
+    .navbar .navbar-cont .menu-icon {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 1.8rem;
+        z-index: 2;
+        cursor: pointer;
+    }
+}
+
+.navbar .navbar-cont .menu-icon .fa-bars,
+.navbar .navbar-cont .menu-icon .fa-times {
+    color: #1b262f;
+}
+
+.navbar .navbar-cont .menu-icon .fa-times {
+    color: #fbfcfe;
+}
+
+.navbar .navbar-cont .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 35px;
+    list-style: none;
+    text-align: center;
+    justify-content: start;
+    margin-left: 80px;
+    align-items: center;
+}
+
+@media screen and (max-width: 756px) {
+    .navbar .navbar-cont .nav-menu {
+        display: flex;
+        flex-direction: column;
+        padding-top: 7%;
+        width: 80%;
+        height: 100%;
+        position: absolute;
+        left: 100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .navbar .navbar-cont .nav-menu.active {
+        background-color: #1b262f;
+        left: 2%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .navbar .navbar-cont .nav-menu.active .nav-links {
+        font-size: 22px;
+        color: #6c8294;
+    }
+
+    .navbar .navbar-cont .nav-menu.active .nav-links:hover {
+        cursor: pointer;
+        color: #fbfcfe;
+    }
+
+    .navbar .navbar-cont .nav-menu.active li:first-child {
+        margin-top: 70px;
+    }
+}
+
+.navbar .navbar-cont .nav-menu .nav-links {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #6c8294;
+    font-family: "Public Sans", sans-serif;
+}
+
+.navbar .navbar-cont .nav-menu .nav-links:hover {
+    transition: all 0.2s ease-out;
+    color: #1b262f;
+}
+
+.navbar .navbar-cont .nav-menu .nav-links-mobile {
+    display: none;
+}
+
+.navbar .navbar-cont .nav-menu .nav-links .nav-item:hover {
+    cursor: pointer;
+}
+
+.navbar .navbar-cont .nav-menu .pink-btn {
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid #ba4270;
+    background-color: #ba4270;
+    color: #fbfcfe;
+}
+
+@media screen and (min-width: 756px) {
+    .navbar .navbar-cont .nav-menu .pink-btn {
+        position: absolute;
+        right: 80px;
+        top: 20px;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .navbar .navbar-cont .nav-menu .pink-btn {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+.navbar .navbar-cont .nav-menu .pink-btn:hover {
+    transition: all 0.2s ease-out;
+    border-color: #da6d97;
+    background-color: #da6d97;
 }
 </style>
