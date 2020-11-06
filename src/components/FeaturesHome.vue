@@ -46,5 +46,40 @@ export default {
 </script>
 
 <style scoped>
+.featuresHome-section {
+    padding: 5% 10%;
+}
 
+.featuresHome-section .feat-card {
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+    .featuresHome-section .feat-card {
+        width: 33%;
+    }
+}
+
+.featuresHome-section .feat-card img {
+    width: 130px;
+    margin-bottom: 30px;
+}
+
+.featuresHome-section .feat-card h3 {
+    font-size: 20px;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.featuresHome-section .feat-card p {
+    padding: 0 7%;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5rem;
+    font-family: "Public Sans", sans-serif;
+    color: #6c8294;
+    margin-bottom: 45px;
+}
 </style>
