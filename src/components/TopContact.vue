@@ -13,6 +13,7 @@ export default {
 <style scoped>
 .top-contact-cont {
     padding: 5% 7% 0%;
+    text-align: start;
 }
 
 @media screen and (min-width: 1080px) {
