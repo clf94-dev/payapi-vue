@@ -13,6 +13,7 @@ export default {
 <style scoped>
 .top-about-cont {
     padding: 5% 7%;
+    text-align: start;
 }
 
 @media screen and (min-width: 1080px) {
