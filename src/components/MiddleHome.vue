@@ -39,5 +39,73 @@ export default {
 </script>
 
 <style scoped>
+.middleHome-section {
+    padding: 5% 10%;
+}
 
+@media screen and (min-width: 755px) {
+    .middleHome-section.reverse {
+        flex-direction: row-reverse !important;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .middleHome-section {
+        flex-direction: column-reverse !important;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .middleHome-section .text-col {
+
+        text-align: start;
+    }
+}
+
+@media screen and (min-width: 755px) {
+    .middleHome-section .text-col {
+        margin: auto 0;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .middleHome-section .text-col {
+        text-align: center !important;
+    }
+}
+
+.middleHome-section .text-col h2 {
+    font-size: 48px;
+    font-family: "Public Sans", sans-serif;
+    margin-bottom: 20px;
+}
+
+.middleHome-section .text-col p {
+    font-size: 15px;
+    line-height: 1.5rem;
+    font-family: "Public Sans", sans-serif;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 755px) {
+    .middleHome-section .text-col p {
+        padding-right: 23%;
+    }
+}
+
+.middleHome-section .img-col {
+    width: 100%;
+    justify-content: center;
+    text-align: center !important;
+}
+
+@media screen and (min-width: 480px) {
+    .middleHome-section .img-col {
+        width: 50%;
+    }
+}
+
+.middleHome-section .img-col img {
+    width: 100%;
+}
 </style>
