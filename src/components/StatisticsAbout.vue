@@ -40,5 +40,76 @@ export default {
 </script>
 
 <style scoped>
+.statistics-section img {
+    width: 100% !important;
+}
 
+.statistics-section .statistics-row {
+    padding: 5%;
+}
+
+@media screen and (min-width: 1080px) {
+    .statistics-section .statistics-row {
+        padding: 5% 10%;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .statistics-section .statistics-row {
+        text-align: center;
+    }
+}
+
+.statistics-section .statistics-row .block-div {
+    border: none;
+    border: 1px solid lightgray;
+    width: 95%;
+    display: none !important;
+}
+
+@media screen and (max-width: 755px) {
+    .statistics-section .statistics-row .block-div {
+        display: block !important;
+    }
+}
+
+.statistics-section .statistics-row .statistics-col {
+    width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+    .statistics-section .statistics-row .statistics-col {
+        width: 33%;
+    }
+}
+
+.statistics-section .statistics-row .statistics-col .card-hr {
+    border: none !important;
+    border: 1px solid lightgray !important;
+    width: 95%;
+    display: block !important;
+}
+
+@media screen and (max-width: 755px) {
+    .statistics-section .statistics-row .statistics-col .card-hr {
+        display: none !important;
+    }
+}
+
+.statistics-section .statistics-row .statistics-col h3 {
+    margin-left: 10px;
+    margin-top: 15px !important;
+    font-size: 15px;
+    font-weight: 300;
+    color: #36536b;
+    font-family: "Public Sans", sans-serif;
+}
+
+.statistics-section .statistics-row .statistics-col h1 {
+    margin-left: 10px;
+    font-size: 45px;
+    color: #da6d97;
+    font-weight: 300;
+    font-family: "Public Sans", sans-serif;
+}
 </style>
