@@ -3,7 +3,7 @@
     <img :src="study" alt="Team members">
     <b-row class="statistics-row">
         <hr class="block-div" />
-        <b-col class="statistics-col" v-for="data of statistics" v-bind:key="data.title">
+        <b-col xs="12" sm="12" md="4" lg="4" class="statistics-col" v-for="data of statistics" v-bind:key="data.title">
 
             <hr class="card-hr" />
             <h3>{{data.title}}</h3>
@@ -46,6 +46,7 @@ export default {
 
 .statistics-section .statistics-row {
     padding: 5%;
+    text-align: start;
 }
 
 @media screen and (min-width: 1080px) {
@@ -70,16 +71,6 @@ export default {
 @media screen and (max-width: 755px) {
     .statistics-section .statistics-row .block-div {
         display: block !important;
-    }
-}
-
-.statistics-section .statistics-row .statistics-col {
-    width: 100%;
-}
-
-@media screen and (min-width: 480px) {
-    .statistics-section .statistics-row .statistics-col {
-        width: 33%;
     }
 }
 
