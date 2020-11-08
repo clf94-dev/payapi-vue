@@ -1,10 +1,10 @@
 <template>
 <b-container fluid class="footer-section">
     <b-row>
-        <b-col class="footer-col" xs="12" sm="12" md="2" lg="2"> <img :src="logo" alt="payapi"></b-col>
-        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a>Pricing</a></b-col>
-        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a>About</a></b-col>
-        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a>Contact</a></b-col>
+        <b-col class="footer-col" xs="12" sm="12" md="2" lg="2"> <img @click="goToHome()" :src="logo" alt="payapi"></b-col>
+        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click="goToPricing()">Pricing</a></b-col>
+        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click="goToAbout()">About</a></b-col>
+        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click="goToContact()">Contact</a></b-col>
         <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"></b-col>
         <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2">
             <div class="social-row">
@@ -23,6 +23,20 @@ export default {
     data() {
         return {
             logo: require("@/assets/images/shared/desktop/logo copy.svg")
+        }
+    },
+    methods: {
+        goToHome() {
+            this.$router.push('/home');
+        },
+        goToAbout() {
+            this.$router.push('/about');
+        },
+        goToPricing() {
+            this.$router.push('/pricing');
+        },
+        goToContact() {
+            this.$router.push('/contact');
         }
     }
 }
