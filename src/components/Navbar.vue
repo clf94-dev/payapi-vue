@@ -10,19 +10,19 @@
             </div>
             <ul class='nav-menu'>
                 <li class="nav-item">
-                    <router-link class="nav-links" to:="/princing">
-                        <p>Pricing</p>
+                    <router-link class="nav-links" to="/princing">
+                        Pricing
                     </router-link>
 
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to:="/about">
-                        <p>About</p>
+                    <router-link class="nav-link" to="/about">
+                        About
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-links" to:="/contact">
-                        <p>Contact</p>
+                    <router-link class="nav-links" to="/contact">
+                        Contact
                     </router-link>
                 </li>
                 <button class='pink-btn'> Schedule a Demo</button>
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .navbar {
     height: 80px;
-    display: center;
+
     justify-content: center;
     align-items: center;
     font-size: 15px;
@@ -56,14 +56,15 @@ export default {
 
 .navbar .navbar-cont {
     display: flex;
-    justify-content: start;
+    justify-content: start !important;
     height: 80px;
     max-width: 1700px;
+
 }
 
 .navbar .navbar-cont .navbar-logo {
     text-align: start !important;
-    margin-left: 10vw;
+    margin-left: 100px;
     margin-top: 20px;
     cursor: pointer;
     align-items: center;
