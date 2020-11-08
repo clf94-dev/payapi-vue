@@ -3,7 +3,7 @@
     <nav class='navbar'>
         <div class="navbar-cont">
             <div class='navbar-logo'>
-                <img :src="logo" alt="payapi" />
+                <img @click="goToHome()" :src="logo" alt="payapi" />
             </div>
             <div class="menu-icon">
                 <i class='fas fa-bars'></i>
@@ -41,6 +41,11 @@ export default {
             logo: require('@/assets/images/shared/desktop/logo.svg'),
         }
 
+    },
+    methods: {
+        goToHome() {
+            this.$router.push('/home');
+        }
     }
 }
 </script>
