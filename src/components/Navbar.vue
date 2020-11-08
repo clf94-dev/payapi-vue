@@ -49,7 +49,7 @@ export default {
 .navbar {
     height: 80px;
 
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     font-size: 15px;
 }
@@ -58,13 +58,15 @@ export default {
     display: flex;
     justify-content: start !important;
     height: 80px;
+    align-items: baseline;
     max-width: 1700px;
+    margin-left: 10vw;
 
 }
 
 .navbar .navbar-cont .navbar-logo {
     text-align: start !important;
-    margin-left: 100px;
+
     margin-top: 20px;
     cursor: pointer;
     align-items: center;
