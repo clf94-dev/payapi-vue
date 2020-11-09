@@ -14,7 +14,7 @@
                 <b-col xs="3" sm="3" md="3" lg="3" class="tick-col"><i :class="datafeat.tick && 'fas fa-check'"></i> </b-col>
 
                 <b-col xs="9" sm="9" md="9" lg="9" class="text-col">
-                    <h4>{{datafeat.name}}</h4>
+                    <h4 :style="[ datafeat.tick ?{'color':'rgb(108, 130, 148)'}: {'color' : 'rgb(27, 38, 47)'}] ">{{datafeat.name}}</h4>
                 </b-col>
                 <!---  <FeaturePricing :title="datafeat.name" :tick="datafeat.tick"></FeaturePricing> ---->
             </b-row>
