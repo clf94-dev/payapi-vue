@@ -142,5 +142,161 @@ export default {
 </script>
 
 <style scoped>
+.pricing-section .top-pricing {
+    text-align: start;
+    padding: 5% 7%;
+}
 
+@media screen and (min-width: 1080px) {
+    .pricing-section .top-pricing {
+        padding: 5% 10%;
+    }
+}
+
+.pricing-section .top-pricing h1 {
+    font-size: 56px;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 300;
+    color: #1b262f;
+}
+
+@media screen and (min-width: 1080px) {
+    .pricing-section .top-pricing h1 {
+        padding-right: 25%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .pricing-section .top-pricing h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+}
+
+.pricing-section .pricing-row {
+    padding: 5% 10%;
+}
+
+@media screen and (min-width: 755px) {
+    .pricing-section .pricing-row {
+        padding: 2% 10%;
+    }
+}
+
+.pricing-section .pricing-row .pricing-col {
+    text-align: start;
+}
+
+@media screen and (max-width: 755px) {
+    .pricing-section .pricing-row .pricing-col {
+        padding-top: 5%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .pricing-section .pricing-row .pricing-col {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.pricing-section .pricing-row .pricing-col h1 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #36536b;
+    font-family: "Public Sans", sans-serif;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 756px) {
+    .pricing-section .pricing-row .pricing-col h1 {
+        font-size: 50px;
+    }
+}
+
+.pricing-section .pricing-row .pricing-col h3 {
+    font-size: 20px;
+    color: #ba4270;
+    font-weight: 300;
+    letter-spacing: -0.05rem;
+    font-family: "Public Sans", sans-serif;
+    margin-bottom: 15px;
+}
+
+.pricing-section .pricing-row .pricing-col p {
+    padding-right: 25%;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5rem;
+    font-family: "Public Sans", sans-serif;
+    color: #6c8294;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1080px) {
+    .pricing-section .pricing-row .pricing-col p {
+        padding: 0 7%;
+    }
+}
+
+.pricing-section .pricing-row .pricing-col hr {
+    color: lightgray;
+    width: 90%;
+    margin: 25px 0;
+}
+
+@media screen and (max-width: 1080px) {
+    .pricing-section .pricing-row .pricing-col hr {
+        justify-self: center;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .pricing-section .pricing-row .pricing-col hr {
+        width: 100%;
+    }
+}
+
+.pricing-section .pricing-row .pricing-col .feature-row {
+    align-items: center;
+    text-align: center;
+}
+
+.pricing-section .pricing-row .pricing-col .feature-row .text-col {
+    width: 75%;
+}
+
+.pricing-section .pricing-row .pricing-col .feature-row .text-col h4 {
+    text-align: start;
+    font-size: 16px;
+    color: #36536b;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 300;
+    margin: 15px 0;
+}
+
+.pricing-section .pricing-row .pricing-col .feature-row .tick-col {
+    width: 25%;
+}
+
+.pricing-section .pricing-row .pricing-col .feature-row .tick-col i {
+    color: #ba4270;
+}
+
+.pricing-section .pricing-row .pricing-col .dark-btn {
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border: 1px solid #1b262f;
+    background-color: transparent;
+    color: #1b262f;
+}
+
+.pricing-section .pricing-row .pricing-col .dark-btn:hover {
+    transition: all 0.2s ease-out;
+    background-color: #1b262f;
+    color: #fbfcfe;
+}
 </style>
