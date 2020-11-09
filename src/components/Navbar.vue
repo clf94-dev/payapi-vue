@@ -10,7 +10,7 @@
             </div>
             <ul class='nav-menu'>
                 <li class="nav-item">
-                    <router-link class="nav-links" to="/princing">
+                    <router-link class="nav-links" to="/pricing">
                         Pricing
                     </router-link>
 

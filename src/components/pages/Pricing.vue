@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Cta from '../Cta.vue'
-import PricingSection from '../PricingSection.vue'
+import Cta from '@/components/Cta.vue'
+import PricingSection from '@/components/PricingSection.vue'
 export default {
     name: 'Pricing',
     components: {
