@@ -4,14 +4,16 @@
     <b-row>
         <b-col xs="12" sm="12" md="6" lg="6" class="form">
             <form class="form-col">
-                <input type="text" name="Name" placeholder="Name">\
+                <input type="text" name="Name" placeholder="Name">
                 <input type="email" name="email" id="" placeholder="Email Address">
                 <input type="text" placeholder="Company-name">
                 <input type="text" placeholder="Title">
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
-                <input type="checkbox" name="checkbox" id="" class="checkbox" />
-                <label for="checkbox">Stay up-to-date with company announcements and updates to our
-                    API</label>
+                <b-row class="checkbox-row">
+                    <input type="checkbox" name="checkbox" id="" class="checkbox" />
+                    <label for="checkbox">Stay up-to-date with company announcements and updates to our
+                        API</label>
+                </b-row>
                 <button type="submit" class="submit-btn"> Submit </button>
             </form>
         </b-col>
@@ -27,5 +29,135 @@ export default {
 </script>
 
 <style scoped>
+.contact-section {
+    padding: 2% 7% 5%;
+    text-align: start;
+}
 
+@media screen and (min-width: 1080px) {
+    .contact-section {
+        padding: 2% 10% 5%;
+    }
+}
+
+.contact-section .form {
+    width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+    .contact-section .form {
+        width: 50%;
+    }
+}
+
+.contact-section .form .form-col input {
+    height: 50px;
+    width: 90%;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #6c8294;
+    color: #6c8294;
+    font-family: "Public Sans", sans-serif;
+}
+
+.contact-section .form .form-col input.checkbox {
+    height: 30px !important;
+    width: 50px !important;
+    background-color: #6c8294;
+}
+
+.contact-section .form .form-col input:focus {
+    outline: none !important;
+}
+
+.contact-section .form .form-col textarea {
+    height: 150px;
+    width: 90%;
+    font-size: 15px;
+    font-family: "Public Sans", sans-serif;
+    padding-left: 15px;
+    border: none;
+    border-bottom: 1px solid #6c8294;
+    color: #6c8294;
+    margin-bottom: 30px;
+}
+
+.contact-section .form .form-col textarea:focus {
+    outline: none !important;
+}
+
+.contact-section .form .form-col small {
+    width: 100% !important;
+    margin-right: 50%;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.contact-section .form .form-col .checkbox-row {
+    text-align: start;
+    align-items: center !important;
+    margin-bottom: 80px !important;
+}
+
+.contact-section .form .form-col .checkbox-row label {
+    font-size: 18px;
+    color: #36536b !important;
+    font-size: "Public Sans", sans-serif !important;
+}
+
+.contact-section .form .form-col .submit-btn {
+    height: 50px;
+    width: 150px;
+    color: #36536b;
+    border: 1px solid #36536b;
+    border-radius: 25px;
+}
+
+.contact-section .form .form-col .submit-btn:hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: #fbfcfe;
+    border: 1px solid #36536b;
+    background-color: #36536b;
+}
+
+.contact-section .contact-comp-cont {
+    width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+    .contact-section .contact-comp-cont {
+        width: 50%;
+    }
+}
+
+.contact-section .contact-comp-cont h3 {
+    font-size: 20px;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 300;
+    color: #36536b;
+    margin-bottom: 15px;
+}
+
+.contact-section .contact-comp-cont .contact-comp-row .company-col {
+    width: 50%;
+}
+
+@media screen and (min-width: 800px) {
+    .contact-section .contact-comp-cont .contact-comp-row .company-col {
+        width: 33%;
+    }
+}
+
+.contact-section .contact-comp-cont .contact-comp-row .company-col .logo {
+    margin: 20px auto 10px !important;
+}
+
+.contact-section .contact-comp-cont .contact-comp-row .company-col .logo:hover {
+    cursor: pointer;
+    transform: scale(1.05) !important;
+}
 </style>
