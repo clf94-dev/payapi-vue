@@ -10,18 +10,18 @@
             </div>
             <ul class='nav-menu'>
                 <li class="nav-item">
-                    <router-link class="nav-links" to="/pricing">
+                    <router-link class="nav-links" to="/pricing" @click.native="$scrollToTop">
                         Pricing
                     </router-link>
 
                 </li>
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/about">
+                <li class=" nav-item">
+                    <router-link class="nav-link" to="/about" @click.native="$scrollToTop">
                         About
                     </router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link class="nav-links" to="/contact">
+                <li class=" nav-item">
+                    <router-link class="nav-links" to="/contact" @click.native="$scrollToTop">
                         Contact
                     </router-link>
                 </li>
@@ -45,7 +45,12 @@ export default {
     methods: {
         goToHome() {
             this.$router.push('/home');
+        },
+
+        scrollToTop() {
+            window.scrollTo(0, 0);
         }
+
     }
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
 <b-container fluid class="footer-section">
     <b-row>
-        <b-col class="footer-col" xs="12" sm="12" md="2" lg="2"> <img @click="goToHome()" :src="logo" alt="payapi"></b-col>
-        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click="goToPricing()">Pricing</a></b-col>
-        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click="goToAbout()">About</a></b-col>
-        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click="goToContact()">Contact</a></b-col>
+        <b-col class="footer-col" xs="12" sm="12" md="2" lg="2"> <img @click="scrollToTop(), goToHome()" :src="logo" alt="payapi"></b-col>
+        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click=" scrollToTop(), goToPricing()">Pricing</a></b-col>
+        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click=" scrollToTop(), goToAbout()">About</a></b-col>
+        <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"><a @click=" scrollToTop(), goToContact()">Contact</a></b-col>
         <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2"></b-col>
         <b-col class="footer-col links" xs="12" sm="12" md="2" lg="2">
             <div class="social-row">
@@ -26,6 +26,9 @@ export default {
         }
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo(0, 0);
+        },
         goToHome() {
             this.$router.push('/home');
         },
