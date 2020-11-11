@@ -5,10 +5,16 @@
         <b-col xs="12" sm="12" md="6" lg="6" class="form" @submit.prevent="showData()">
             <form class="form-col">
                 <input type="text" name="Name" placeholder="Name" v-model="user.name">
+                <div v-if="!$v.user.name.required">
+                    The name is required</div>
                 <input type="email" name="email" id="" placeholder="Email Address" v-model="user.email">
+                <div v-if="!$v.user.email.required">
+                    An Email Address is required</div>
                 <input type="text" placeholder="Company Name" v-model="user.company">
                 <input type="text" placeholder="Title" v-model="user.title">
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Message" v-model="user.message"></textarea>
+                <div v-if="!$v.user.message.required">
+                    A Message is required</div>
                 <b-row class="checkbox-row">
                     <input type="checkbox" name="checkbox" id="" class="checkbox" v-model="user.checkbox" />
                     <label for="checkbox">Stay up-to-date with company announcements and updates to our
@@ -33,9 +39,10 @@ export default {
     methods: {
         showData() {
             console.log(this.user)
+
         }
     },
-    validators: {
+    validations: {
         name: {
             required,
             minLength: minLength(2)
@@ -53,6 +60,7 @@ export default {
     },
     data() {
         return {
+            submitted: false,
             user: {
                 name: '',
                 email: '',
