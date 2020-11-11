@@ -12,9 +12,12 @@ import About from './components/pages/About.vue'
 import Contact from './components/pages/Contact.vue'
 import VueRouter from 'vue-router'
 
+import Vuelidate from 'vuelidate';
+
 
 Vue.config.productionTip = false
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(Vuelidate);
 
 const routes=[
   {path:'/', component: Home},
