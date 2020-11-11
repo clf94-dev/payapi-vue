@@ -7,14 +7,22 @@
                 <input type="text" name="Name" placeholder="Name" v-model="user.name">
                 <div v-if="submitted && !$v.user.name.required">
                     The name is required</div>
+                <div v-if="submitted && !$v.user.name.alpha">
+                    The name must contain alphabetic characters</div>
+                <div v-if="submitted && !$v.user.name.minLength">
+                    The name must contain at least 2 characters</div>
                 <input type="email" name="email" id="" placeholder="Email Address" v-model="user.email">
                 <div v-if="submitted && !$v.user.email.required">
                     An Email Address is required</div>
+                <div v-if="submitted && !$v.user.email.email">
+                    Invalid Email Address </div>
                 <input type="text" placeholder="Company Name" v-model="user.company">
                 <input type="text" placeholder="Title" v-model="user.title">
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Message" v-model="user.message"></textarea>
                 <div v-if="submitted && !$v.user.message.required">
                     A Message is required</div>
+                <div v-if="submitted && !$v.user.message.minLength">
+                    The message must contain at least 5 characters</div>
                 <b-row class="checkbox-row">
                     <input type="checkbox" name="checkbox" id="" class="checkbox" v-model="user.checkbox" />
                     <label for="checkbox">Stay up-to-date with company announcements and updates to our
@@ -32,6 +40,7 @@
 import {
     required,
     email,
+    alpha,
     minLength
 } from 'vuelidate/lib/validators'
 export default {
@@ -53,7 +62,8 @@ export default {
 
             name: {
                 required,
-                minLength: minLength(2)
+                minLength: minLength(2),
+                alpha
             },
             email: {
                 required,
