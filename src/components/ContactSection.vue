@@ -2,15 +2,15 @@
 <b-container fluid class="contact-section">
 
     <b-row>
-        <b-col xs="12" sm="12" md="6" lg="6" class="form">
+        <b-col xs="12" sm="12" md="6" lg="6" class="form" @submit.prevent="showData()">
             <form class="form-col">
-                <input type="text" name="Name" placeholder="Name">
-                <input type="email" name="email" id="" placeholder="Email Address">
-                <input type="text" placeholder="Company-name">
-                <input type="text" placeholder="Title">
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="text" name="Name" placeholder="Name" v-model="user.name">
+                <input type="email" name="email" id="" placeholder="Email Address" v-model="user.email">
+                <input type="text" placeholder="Company Name" v-model="user.company">
+                <input type="text" placeholder="Title" v-model="user.title">
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Message" v-model="user.message"></textarea>
                 <b-row class="checkbox-row">
-                    <input type="checkbox" name="checkbox" id="" class="checkbox" />
+                    <input type="checkbox" name="checkbox" id="" class="checkbox" v-model="user.checkbox" />
                     <label for="checkbox">Stay up-to-date with company announcements and updates to our
                         API</label>
                 </b-row>
@@ -24,7 +24,24 @@
 
 <script>
 export default {
-    name: 'ContactSection'
+    name: 'ContactSection',
+    methods: {
+        showData() {
+            console.log(this.user)
+        }
+    },
+    data() {
+        return {
+            user: {
+                name: '',
+                email: '',
+                company: '',
+                title: '',
+                message: '',
+                checkbox: false
+            }
+        }
+    }
 }
 </script>
 
