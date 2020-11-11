@@ -38,23 +38,32 @@ export default {
     name: 'ContactSection',
     methods: {
         showData() {
-            console.log(this.user)
+            console.log(this.user),
+                this.submitted = true;
+
+            this.$v.$touch();
+            if (this.$v.$invalid) {
+                return false;
+            }
 
         }
     },
     validations: {
-        name: {
-            required,
-            minLength: minLength(2)
-        },
-        email: {
-            required,
-            email
-        },
-        message: {
-            required,
-            minLength: minLength(5)
+        user: {
 
+            name: {
+                required,
+                minLength: minLength(2)
+            },
+            email: {
+                required,
+                email
+            },
+            message: {
+                required,
+                minLength: minLength(5)
+
+            }
         }
 
     },
