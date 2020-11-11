@@ -25,6 +25,7 @@ export default {
             logo: require("@/assets/images/shared/desktop/logo copy.svg")
         }
     },
+
     methods: {
         scrollToTop() {
             window.scrollTo(0, 0);

@@ -23,12 +23,33 @@
 </template>
 
 <script>
+import {
+    required,
+    email,
+    minLength
+} from 'vuelidate/lib/validators'
 export default {
     name: 'ContactSection',
     methods: {
         showData() {
             console.log(this.user)
         }
+    },
+    validators: {
+        name: {
+            required,
+            minLength: minLength(2)
+        },
+        email: {
+            required,
+            email
+        },
+        message: {
+            required,
+            minLength: minLength(5)
+
+        }
+
     },
     data() {
         return {
