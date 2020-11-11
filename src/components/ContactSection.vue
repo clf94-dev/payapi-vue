@@ -31,12 +31,16 @@
                 <button type="submit" class="submit-btn"> Submit </button>
             </form>
         </b-col>
-
+        <b-col xs="12" sm="12" md="6" lg="6">
+            <CompaniesContactSection> </CompaniesContactSection>
+        </b-col>
     </b-row>
+
 </b-container>
 </template>
 
 <script>
+import CompaniesContactSection from './CompaniesContactSection.vue'
 import {
     required,
     email,
@@ -45,6 +49,9 @@ import {
 } from 'vuelidate/lib/validators'
 export default {
     name: 'ContactSection',
+    components: {
+        CompaniesContactSection
+    },
     methods: {
         showData() {
             console.log(this.user),
@@ -187,42 +194,5 @@ export default {
     color: #fbfcfe;
     border: 1px solid #36536b;
     background-color: #36536b;
-}
-
-.contact-section .contact-comp-cont {
-    width: 100%;
-}
-
-@media screen and (min-width: 480px) {
-    .contact-section .contact-comp-cont {
-        width: 50%;
-    }
-}
-
-.contact-section .contact-comp-cont h3 {
-    font-size: 20px;
-    font-family: "Public Sans", sans-serif;
-    font-weight: 300;
-    color: #36536b;
-    margin-bottom: 15px;
-}
-
-.contact-section .contact-comp-cont .contact-comp-row .company-col {
-    width: 50%;
-}
-
-@media screen and (min-width: 800px) {
-    .contact-section .contact-comp-cont .contact-comp-row .company-col {
-        width: 33%;
-    }
-}
-
-.contact-section .contact-comp-cont .contact-comp-row .company-col .logo {
-    margin: 20px auto 10px !important;
-}
-
-.contact-section .contact-comp-cont .contact-comp-row .company-col .logo:hover {
-    cursor: pointer;
-    transform: scale(1.05) !important;
 }
 </style>
