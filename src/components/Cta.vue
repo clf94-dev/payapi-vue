@@ -4,11 +4,15 @@
         <b-col class="title-col" xs="12" sm="12" md="6" lg="6">
             <h2>Ready to start?</h2>
         </b-col>
-        <b-col class="input-row" xs="12" sm="12" md="6" lg="6">
+        <b-col class="input-row" xs="12" sm="12" md="6" lg="6" @submit.prevent="showData()">
             <form>
                 <b-row>
                     <b-col xs="12" sm="8" md="8" lg="8" class="input-col">
-                        <input type="text">
+                        <input name="email" v-model="email" :style="[submitted && (!$v.email.required || !$v.email.email ) ? {color: '#da6d97', borderBottomColor: '#da6d97'} : {color: '#36536b', borderBottomColor: '#36536b'} ]" type="text" placeholder="Email Address...">
+                        <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.required">
+                            An Email Address is required</div>
+                        <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.email">
+                            Invalid Email Address </div>
                     </b-col>
                     <b-col xs="12" sm="4" md="4" lg="4" class="btn-col">
                         <button type="submit" class='pink-btn'>Schedule a Demo</button>
@@ -23,8 +27,37 @@
 </template>
 
 <script>
+import {
+    required,
+    email
+} from 'vuelidate/lib/validators'
 export default {
-    name: 'Cta'
+    name: 'Cta',
+    validations: {
+        email: {
+            email,
+            required
+
+        }
+
+    },
+    methods: {
+        showData() {
+            console.log(this.email),
+                this.submitted = true;
+
+            this.$v.$touch();
+            if (this.$v.$invalid) {
+                return false;
+            }
+        }
+    },
+    data() {
+        return {
+            submitted: false,
+            email: ""
+        }
+    },
 }
 </script>
 
@@ -120,7 +153,7 @@ export default {
 
 .cta-section .input-row .btn-col .pink-btn {
     height: 50px;
-    margin-top: 14%;
+    margin-top: 17%;
     width: 80%;
     box-shadow: 5px 10px 12px 1px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
@@ -133,7 +166,7 @@ export default {
 
 @media screen and (min-width: 755px) {
     .cta-section .input-row .btn-col .pink-btn {
-        width: 150px;
+        width: 200px;
     }
 }
 
