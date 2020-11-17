@@ -2,19 +2,19 @@
 <b-container fluid>
     <b-row class="cta-section">
         <b-col class="title-col" xs="12" sm="12" md="6" lg="6">
-            <h2>Ready to start?</h2>
+            <h2 data-aos='fade-right'>Ready to start?</h2>
         </b-col>
         <b-col class="input-row" xs="12" sm="12" md="6" lg="6" @submit.prevent="showData()">
             <form>
                 <b-row>
-                    <b-col xs="12" sm="8" md="8" lg="8" class="input-col">
+                    <b-col xs="12" sm="8" md="8" lg="8" class="input-col" data-aos='fade-left' data-aos-delay='200'>
                         <input name="email" v-model="email" :style="[submitted && (!$v.email.required || !$v.email.email ) ? {color: '#da6d97', borderBottomColor: '#da6d97'} : {color: '#36536b', borderBottomColor: '#36536b'} ]" type="text" placeholder="Email Address...">
                         <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.required">
                             An Email Address is required</div>
                         <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.email">
                             Invalid Email Address </div>
                     </b-col>
-                    <b-col xs="12" sm="4" md="4" lg="4" class="btn-col">
+                    <b-col xs="12" sm="4" md="4" lg="4" class="btn-col" data-aos='fade-left' data-aos-delay='200'>
                         <button type="submit" class='pink-btn'>Schedule a Demo</button>
                     </b-col>
                 </b-row>
