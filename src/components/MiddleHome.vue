@@ -2,11 +2,11 @@
 <b-container fluid>
     <b-row v-for="data of middle" v-bind:key="data.title" :class="data.classes ">
         <b-col class="text-col" xs="12" sm="12" md="6" lg="6">
-            <h2>{{data.title}}</h2>
-            <p>{{data.text}}</p>
+            <h2 data-aos='fade-up' data-aos-delay='200'>{{data.title}}</h2>
+            <p data-aos='fade-up' data-aos-delay='400'>{{data.text}}</p>
         </b-col>
         <b-col class="img-col" xs="12" sm="12" md="6" lg="6">
-            <img :src="data.src" :alt="data.imgAlt">
+            <img data-aos='fade-up' data-aos-delay='200' :src="data.src" :alt="data.imgAlt">
         </b-col>
     </b-row>
 
