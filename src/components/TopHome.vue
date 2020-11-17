@@ -1,13 +1,17 @@
 <template>
 <b-container fluid>
     <b-row class="topHome-section">
-        <b-col class="title-col" xs="12" sm="6" md="6" lg="6">
+        <b-col class="title-col" xs="12" sm="6" md="6" lg="6" @submit.prevent="showData()">
             <h1>Start building with our APIs for absolutely free.
             </h1>
             <form>
                 <b-row>
                     <b-col xs="12" sm="6" md="6" lg="6" class="input-col">
-                        <input type="text">
+                        <input name="email" v-model="email" :style="[submitted && (!$v.email.required || !$v.email.email ) ? {color: '#da6d97', borderBottomColor: '#da6d97'} : {color: '#36536b', borderBottomColor: '#36536b'} ]" type="text" placeholder="Email Address...">
+                        <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.required">
+                            An Email Address is required</div>
+                        <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.email">
+                            Invalid Email Address </div>
                     </b-col>
                     <b-col xs="12" sm="6" md="6" lg="6" class="btn-col">
                         <button type="submit" class='pink-btn'>Schedule a Demo</button>
@@ -26,13 +30,39 @@
 </template>
 
 <script>
+import {
+    required,
+    email
+} from 'vuelidate/lib/validators'
 export default {
     name: 'TopHome',
+
+    validations: {
+        email: {
+            email,
+            required
+
+        }
+
+    },
+    methods: {
+        showData() {
+            console.log(this.email),
+                this.submitted = true;
+
+            this.$v.$touch();
+            if (this.$v.$invalid) {
+                return false;
+            }
+        }
+    },
     data() {
         return {
-            phone: require("@/assets/images/home/desktop/illustration-phone-mockup.svg")
+            submitted: false,
+            phone: require("@/assets/images/home/desktop/illustration-phone-mockup.svg"),
+            email: ""
         }
-    }
+    },
 }
 </script>
 
