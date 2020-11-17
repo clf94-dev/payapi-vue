@@ -10,18 +10,18 @@
             </div>
             <ul class='nav-menu'>
                 <li class="nav-item">
-                    <router-link class="nav-links" to="/pricing" @click.native="$scrollToTop">
+                    <router-link class="nav-links" :active-link="active" to="/pricing" @click.native="$scrollToTop">
                         Pricing
                     </router-link>
 
                 </li>
                 <li class=" nav-item">
-                    <router-link class="nav-link" to="/about" @click.native="$scrollToTop">
+                    <router-link class="nav-links" :active-link="active" to="/about" @click.native="$scrollToTop">
                         About
                     </router-link>
                 </li>
                 <li class=" nav-item">
-                    <router-link class="nav-links" to="/contact" @click.native="$scrollToTop">
+                    <router-link class="nav-links" :active-link="active" to="/contact" @click.native="$scrollToTop">
                         Contact
                     </router-link>
                 </li>
@@ -176,9 +176,13 @@ export default {
     font-family: "Public Sans", sans-serif;
 }
 
+.navbar .navbar-cont .nav-menu .nav-links.router-link-active {
+    color: #1b262f !important;
+}
+
 .navbar .navbar-cont .nav-menu .nav-links:hover {
     transition: all 0.2s ease-out;
-    color: #1b262f;
+    color: #1b262f !important;
 }
 
 .navbar .navbar-cont .nav-menu .nav-links-mobile {
