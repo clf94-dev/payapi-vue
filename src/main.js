@@ -14,6 +14,8 @@ import VueRouter from 'vue-router'
 
 import Vuelidate from 'vuelidate';
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
@@ -34,4 +36,7 @@ const router=new VueRouter({
 
 new Vue({
   router,render: h => h(App),
+  created() {
+    AOS.init();
+  },
 }).$mount('#app')
