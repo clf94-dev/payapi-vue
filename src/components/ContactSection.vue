@@ -4,24 +4,24 @@
     <b-row>
         <b-col xs="12" sm="12" md="6" lg="6" class="form" @submit.prevent="showData()">
             <form class="form-col">
-                <input type="text" name="Name" placeholder="Name" v-model="user.name">
-                <div v-if="submitted && !$v.user.name.required">
+                <input :style="[submitted && (!$v.user.name.required || !$v.user.name.alpha || !$v.user.name.minLength ) ? {color: ' #da6d97', borderBottomColor: ' #da6d97'} : {color: ' #36536b', borderBottomColor: ' #36536b'} ]" type="text" name="Name" placeholder="Name" v-model="user.name">
+                <div class="error" v-if="submitted && !$v.user.name.required">
                     The name is required</div>
-                <div v-if="submitted && !$v.user.name.alpha">
+                <div class="error" v-if="submitted && !$v.user.name.alpha">
                     The name must contain alphabetic characters</div>
-                <div v-if="submitted && !$v.user.name.minLength">
+                <div class="error" v-if="submitted && !$v.user.name.minLength">
                     The name must contain at least 2 characters</div>
-                <input type="email" name="email" id="" placeholder="Email Address" v-model="user.email">
-                <div v-if="submitted && !$v.user.email.required">
+                <input :style="[submitted && (!$v.user.email.email ||!$v.user.email.required ) ? {color: ' #da6d97', borderBottomColor: ' #da6d97'} : {color: ' #36536b', borderBottomColor: ' #36536b'} ]" type="email" name="email" id="" placeholder="Email Address" v-model="user.email">
+                <div class="error" v-if="submitted && !$v.user.email.required">
                     An Email Address is required</div>
-                <div v-if="submitted && !$v.user.email.email">
+                <div class="error" v-if="submitted && !$v.user.email.email">
                     Invalid Email Address </div>
                 <input type="text" placeholder="Company Name" v-model="user.company">
                 <input type="text" placeholder="Title" v-model="user.title">
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Message" v-model="user.message"></textarea>
-                <div v-if="submitted && !$v.user.message.required">
+                <textarea :style="[submitted && (!$v.user.message.required || !$v.user.message.minLength ) ? {color: ' #da6d97', borderBottomColor: ' #da6d97'} : {color: ' #36536b', borderBottomColor: ' #36536b'} ]" name="message" id="" cols="30" rows="10" placeholder="Message" v-model="user.message"></textarea>
+                <div class="error" v-if="submitted && !$v.user.message.required">
                     A Message is required</div>
-                <div v-if="submitted && !$v.user.message.minLength">
+                <div class="error" v-if="submitted && !$v.user.message.minLength">
                     The message must contain at least 5 characters</div>
                 <b-row class="checkbox-row">
                     <input type="checkbox" name="checkbox" id="" class="checkbox" v-model="user.checkbox" />
@@ -101,6 +101,10 @@ export default {
 </script>
 
 <style scoped>
+.error {
+    color: #da6d97 !important;
+}
+
 .contact-section {
     padding: 2% 7% 5%;
     text-align: start;
@@ -129,6 +133,7 @@ export default {
     font-size: 15px;
     padding-left: 15px;
     margin-bottom: 20px;
+    margin-top: 10px;
     border: none;
     border-bottom: 1px solid #6c8294;
     color: #6c8294;
@@ -166,6 +171,7 @@ export default {
     margin-right: 50%;
     margin-bottom: 20px;
     padding-left: 5px;
+
 }
 
 .contact-section .form .form-col .checkbox-row {
