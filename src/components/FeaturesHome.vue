@@ -1,7 +1,7 @@
 <template>
 <b-container fluid class="featuresHome-section">
     <b-row>
-        <b-col class="feat-card" xs="12" sm="4" md="4" lg="4" v-for="data of features" v-bind:key="data.title">
+        <b-col class="feat-card" xs="12" sm="4" md="4" lg="4" v-for="data of features" v-bind:key="data.title" data-aos='fade-up' :data-aos-delay="data.delay">
             <img :src="data.src" :alt="data.imgAlt">
             <h3>{{data.title}}</h3>
             <p>{{data.text}}</p>
