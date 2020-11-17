@@ -2,10 +2,10 @@
 <b-container fluid>
     <b-row class="topHome-section">
         <b-col class="title-col" xs="12" sm="6" md="6" lg="6" @submit.prevent="showData()">
-            <h1>Start building with our APIs for absolutely free.
+            <h1 data-aos='fade-right' data-aos-delay='100'>Start building with our APIs for absolutely free.
             </h1>
             <form>
-                <b-row>
+                <b-row data-aos='fade-right' data-aos-delay='300'>
                     <b-col xs="12" sm="6" md="6" lg="6" class="input-col">
                         <input name="email" v-model="email" :style="[submitted && (!$v.email.required || !$v.email.email ) ? {color: '#da6d97', borderBottomColor: '#da6d97'} : {color: '#36536b', borderBottomColor: '#36536b'} ]" type="text" placeholder="Email Address...">
                         <div :style="{color: ' #f67e7e'}" v-if="submitted && !$v.email.required">
@@ -22,7 +22,7 @@
         </b-col>
 
         <b-col class="img-col" xs="12" sm="6" md="6" lg="6">
-            <img :src="phone" alt="Mobile">
+            <img data-aos='fade-left' data-aos-delay='100' :src="phone" alt="Mobile">
         </b-col>
     </b-row>
 
