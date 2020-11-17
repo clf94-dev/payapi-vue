@@ -4,7 +4,7 @@
         <h1>Pricing</h1>
     </div>
     <b-row class="pricing-row">
-        <b-col class="pricing-col" xs="12" sm="4" md="4" lg="4" v-for="data of pricingData" v-bind:key="data.title">
+        <b-col class="pricing-col" xs="12" sm="4" md="4" lg="4" v-for="data of pricingData" v-bind:key="data.title" data-aos='fade-up' :data-aos-delay="data.delay">
             <h3>{{data.title}}</h3>
             <p>{{data.text}}</p>
             <h1>{{data.price}}</h1>
@@ -37,6 +37,7 @@ export default {
                     title: "Free Plan",
                     text: "Build and test using our core set of products with up to 100 API requests",
                     price: "$0.00",
+                    delay: 200,
                     features: [{
                             name: "Transactions",
                             tick: true
@@ -71,6 +72,7 @@ export default {
                     title: "Basic Plan",
                     text: "Launch your project with unlimited requests and no contractual minimums",
                     price: "$249.00",
+                    delay: 400,
                     features: [{
                             name: "Transactions",
                             tick: true
@@ -105,6 +107,7 @@ export default {
                     title: "Premium Plan",
                     text: "Get tailored solutions, volume pricing, and dedicated support for your team",
                     price: "$499.00",
+                    delay: 600,
                     features: [{
                             name: "Transactions",
                             tick: true
