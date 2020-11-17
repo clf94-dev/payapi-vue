@@ -3,7 +3,7 @@
     <img :src="study" alt="Team members">
     <b-row class="statistics-row">
         <hr class="block-div" />
-        <b-col xs="12" sm="12" md="4" lg="4" class="statistics-col" v-for="data of statistics" v-bind:key="data.title">
+        <b-col xs="12" sm="12" md="4" lg="4" class="statistics-col" v-for="data of statistics" v-bind:key="data.title" data-aos='fade-up' :data-aos-delay="data.delay">
 
             <hr class="card-hr" />
             <h3>{{data.title}}</h3>
@@ -23,15 +23,18 @@ export default {
             study: require("@/assets/images/about/desktop/image-team-members.jpg"),
             statistics: [{
                     title: 'Team Members',
-                    text: '300+'
+                    text: '300+',
+                    delay: 200
                 },
                 {
                     title: 'Offices in the US',
-                    text: '3'
+                    text: '3',
+                    delay: 400
                 },
                 {
                     title: 'Transactions analyzed',
-                    text: '10M+'
+                    text: '10M+',
+                    delay: 600
                 }
             ]
         }
