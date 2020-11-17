@@ -1,9 +1,9 @@
 <template>
 <b-container fluid class='contact-comp-cont'>
-    <h3>Join the thousands of innovators already building with us</h3>
+    <h3 data-aos='fade-right'>Join the thousands of innovators already building with us</h3>
     <b-row class="contact-comp-row">
         <b-col class="company-col" xs="6" sm="6" md="4" lg="4" v-for="data of companies" v-bind:key="data.imgAlt">
-            <img class="logo" :src="data.src" :alt="data.imgAlt">
+            <img class="logo" :src="data.src" :alt="data.imgAlt" data-aos='fade-up' :data-aos-delay="data.delay">
         </b-col>
     </b-row>
 </b-container>
@@ -17,27 +17,33 @@ export default {
 
             companies: [{
                     src: require("@/assets/images/shared/desktop/tesla.svg"),
-                    imgAlt: " Tesla"
+                    imgAlt: " Tesla",
+                    delay: 200
                 },
                 {
                     src: require("@/assets/images/shared/desktop/google.svg"),
-                    imgAlt: "Google"
+                    imgAlt: "Google",
+                    delay: 300
                 },
                 {
                     src: require("@/assets/images/shared/desktop/microsoft.svg"),
-                    imgAlt: "Microsoft"
+                    imgAlt: "Microsoft",
+                    delay: 400
                 },
                 {
                     src: require("@/assets/images/shared/desktop/hewlett-packard.svg"),
-                    imgAlt: "HP"
+                    imgAlt: "HP",
+                    delay: 500
                 },
                 {
                     src: require("@/assets/images/shared/desktop/oracle.svg"),
-                    imgAlt: "Oracle"
+                    imgAlt: "Oracle",
+                    delay: 600
                 },
                 {
                     src: require("@/assets/images/shared/desktop/nvidia.svg"),
-                    imgAlt: "NVidia"
+                    imgAlt: "NVidia",
+                    delay: 700
                 }
             ]
 
