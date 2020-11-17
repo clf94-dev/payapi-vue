@@ -17,7 +17,7 @@
                         <button type="submit" class='pink-btn'>Schedule a Demo</button>
                     </b-col>
                 </b-row>
-                <p>Have any questions? <a>Contact Us</a> </p>
+                <p>Have any questions? <a @click=" scrollToTop(), goToContact()">Contact Us</a> </p>
             </form>
         </b-col>
 
@@ -54,6 +54,12 @@ export default {
             if (this.$v.$invalid) {
                 return false;
             }
+        },
+        scrollToTop() {
+            window.scrollTo(0, 0);
+        },
+        goToContact() {
+            this.$router.push('/contact');
         }
     },
     data() {
@@ -192,7 +198,8 @@ export default {
 
 @media screen and (min-width: 755px) {
     .topHome-section .title-col .btn-col .pink-btn {
-        width: 250px;
+        width: 300px;
+        margin-top: 1px;
     }
 }
 
