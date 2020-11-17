@@ -1,7 +1,7 @@
 <template>
 <b-container fluid class="companies-section">
     <b-row>
-        <b-col class="title-col" xs="12" sm="6" md="6" lg="6">
+        <b-col class="title-col" xs="12" sm="6" md="6" lg="6" data-aos='fade-right'>
             <h2>Who we work with</h2>
             <p>Today, millions of people around the world have successfully connected their accounts to apps they love using our API. We provide developers with the tools they need to create easy and accessible experiences for their users.
             </p>
@@ -9,12 +9,12 @@
         </b-col>
         <b-col class="logos-col" xs="12" sm="6" md="6" lg="6">
             <b-row class="comp-row">
-                <b-col class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="tesla" alt="Tesla" class="logo"></b-col>
-                <b-col class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="microsoft" alt="Microsoft" class="logo"></b-col>
-                <b-col class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="hp" alt="HP" class="logo"></b-col>
-                <b-col class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="oracle" alt="Oracle" class="logo"></b-col>
-                <b-col class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="google" alt="Google" class="logo"></b-col>
-                <b-col class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="nvidia" alt="NVidia" class="logo"></b-col>
+                <b-col data-aos='fade-up' data-aos-delay='100' class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="tesla" alt="Tesla" class="logo"></b-col>
+                <b-col data-aos='fade-up' data-aos-delay='300' class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="microsoft" alt="Microsoft" class="logo"></b-col>
+                <b-col data-aos='fade-up' data-aos-delay='500' class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="hp" alt="HP" class="logo"></b-col>
+                <b-col data-aos='fade-up' data-aos-delay='700' class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="oracle" alt="Oracle" class="logo"></b-col>
+                <b-col data-aos='fade-up' data-aos-delay='900' class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="google" alt="Google" class="logo"></b-col>
+                <b-col data-aos='fade-up' data-aos-delay='1100' class="logo-item" xs="6" sm="6" md="4" lg="4"><img :src="nvidia" alt="NVidia" class="logo"></b-col>
             </b-row>
         </b-col>
     </b-row>
