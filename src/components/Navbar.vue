@@ -3,26 +3,26 @@
     <nav class='navbar'>
         <div class="navbar-cont">
             <div class='navbar-logo'>
-                <img @click="goToHome()" :src="logo" alt="payapi" />
+                <img @click="closeMobile(),goToHome()" :src="logo" alt="payapi" />
             </div>
             <div class="menu-icon">
-                <i class='fas fa-bars'></i>
+                <button class="nav-btn" @click="handleClick()"> <i :class="click ? 'fas fa-times' :'fas fa-bars'"></i></button>
             </div>
-            <ul class='nav-menu'>
+            <ul :class="click?'nav-menu active':'nav-menu' ">
                 <li class="nav-item">
                     <router-link class="nav-links" :active-link="active" to="/pricing" @click.native="$scrollToTop">
-                        Pricing
+                        <button class="nav-btn" @click="closeMobile()"> Pricing</button>
                     </router-link>
 
                 </li>
                 <li class=" nav-item">
-                    <router-link class="nav-links" :active-link="active" to="/about" @click.native="$scrollToTop">
-                        About
+                    <router-link class="nav-links" @click="closeMobile()" :active-link="active" to="/about" @click.native="$scrollToTop">
+                        <button class="nav-btn" @click="closeMobile()"> About</button>
                     </router-link>
                 </li>
                 <li class=" nav-item">
-                    <router-link class="nav-links" :active-link="active" to="/contact" @click.native="$scrollToTop">
-                        Contact
+                    <router-link class="nav-links" @click="closeMobile()" :active-link="active" to="/contact" @click.native="$scrollToTop">
+                        <button class="nav-btn" @click="closeMobile()"> Contact </button>
                     </router-link>
                 </li>
                 <button class='pink-btn'> Schedule a Demo</button>
@@ -39,10 +39,20 @@ export default {
     data() {
         return {
             logo: require('@/assets/images/shared/desktop/logo.svg'),
+            click: false
         }
 
     },
     methods: {
+        closeMobile() {
+            this.click = false;
+        },
+        handleClick() {
+
+            this.click = !this.click;
+
+        },
+
         goToHome() {
             this.$router.push('/home');
         },
@@ -56,6 +66,14 @@ export default {
 </script>
 
 <style scoped>
+.nav-btn {
+    position: relative;
+    top: -10px;
+    width: 150px;
+    border: none;
+    background: transparent;
+}
+
 .navbar {
     height: 80px;
 
@@ -107,7 +125,7 @@ export default {
         top: 30px;
         right: 40px;
         font-size: 1.8rem;
-        z-index: 2;
+        z-index: 2 !important;
         cursor: pointer;
     }
 }
@@ -150,17 +168,27 @@ export default {
         left: 2%;
         opacity: 1;
         transition: all 0.5s ease;
+        height: 430px;
         z-index: 1;
+
     }
 
-    .navbar .navbar-cont .nav-menu.active .nav-links {
+    .navbar .navbar-cont .nav-menu.active .nav-links .nav-btn {
         font-size: 22px;
-        color: #6c8294;
+        color: #6c8294 !important;
+
+        margin-left: 30%;
     }
 
-    .navbar .navbar-cont .nav-menu.active .nav-links:hover {
+    .navbar .navbar-cont .nav-menu.active .nav-item {
+        width: 380px;
+        height: 50px;
+
+    }
+
+    .navbar .navbar-cont .nav-menu.active .nav-links .nav-btn:hover {
         cursor: pointer;
-        color: #fbfcfe;
+        color: #fbfcfe !important;
     }
 
     .navbar .navbar-cont .nav-menu.active li:first-child {
