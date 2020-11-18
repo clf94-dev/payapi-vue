@@ -6,7 +6,10 @@
                 <img @click="closeMobile(),goToHome()" :src="logo" alt="payapi" />
             </div>
             <div class="menu-icon">
-                <button class="nav-btn" @click="handleClick()"> <i :class="click ? 'fas fa-times' :'fas fa-bars'"></i></button>
+                <button class="nav-btn" @click="handleClick()">
+                    <span key="bars" v-if="!click"> <i class="fas fa-bars"></i></span>
+                    <span key="cross" v-else><i class="fas fa-times"></i></span>
+                </button>
             </div>
             <ul :class="click?'nav-menu active':'nav-menu' ">
                 <li class="nav-item">
@@ -75,6 +78,7 @@ export default {
 }
 
 .navbar {
+    margin-top: 0px;
     height: 80px;
 
     justify-content: start;
@@ -110,7 +114,7 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
-        transform: translate(10%, 0);
+        transform: translate(30%, 0);
     }
 }
 
@@ -123,7 +127,7 @@ export default {
         display: block;
         position: absolute;
         top: 30px;
-        right: 40px;
+        right: 10px;
         font-size: 1.8rem;
         z-index: 2 !important;
         cursor: pointer;
@@ -136,6 +140,7 @@ export default {
 }
 
 .navbar .navbar-cont .menu-icon .fa-times {
+    margin-top: 20px;
     color: #fbfcfe;
 }
 
@@ -168,7 +173,7 @@ export default {
         left: 2%;
         opacity: 1;
         transition: all 0.5s ease;
-        height: 430px;
+        height: 900px;
         z-index: 1;
 
     }
@@ -193,6 +198,18 @@ export default {
 
     .navbar .navbar-cont .nav-menu.active li:first-child {
         margin-top: 70px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 750px) {
+    .navbar .navbar-cont .nav-menu.active {
+        background-color: #1b262f;
+        left: 10% !important;
+        opacity: 1;
+        transition: all 0.5s ease;
+        height: 900px;
+        z-index: 1;
+
     }
 }
 
