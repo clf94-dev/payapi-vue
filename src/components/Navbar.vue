@@ -155,6 +155,13 @@ export default {
     align-items: center;
 }
 
+.navbar .navbar-cont .nav-menu .nav-links .nav-btn {
+    font-size: 16px;
+    color: #6c8294 !important;
+    position: relative;
+    top: 3px;
+}
+
 @media screen and (max-width: 756px) {
     .navbar .navbar-cont .nav-menu {
         display: flex;
@@ -166,6 +173,10 @@ export default {
         left: 100%;
         opacity: 0;
         transition: all 0.5s ease;
+    }
+
+    .navbar .navbar-cont .nav-menu.active .nav-links.router-link-active .nav-btn {
+        color: white !important;
     }
 
     .navbar .navbar-cont .nav-menu.active {
@@ -221,13 +232,13 @@ export default {
     font-family: "Public Sans", sans-serif;
 }
 
-.navbar .navbar-cont .nav-menu .nav-links.router-link-active {
+.navbar .navbar-cont .nav-menu .nav-links.router-link-active .nav-btn {
     color: #1b262f !important;
 }
 
 .navbar .navbar-cont .nav-menu .nav-links:hover {
     transition: all 0.2s ease-out;
-    color: #1b262f !important;
+    color: #1b262f;
 }
 
 .navbar .navbar-cont .nav-menu .nav-links-mobile {
